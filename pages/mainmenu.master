@@ -1,0 +1,214 @@
+﻿<%@ Master Language="C#" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<script runat="server">
+</script>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title>NBA</title>
+    <script type="text/javascript">
+        !function (t, e) {
+            "use strict"; var r = function (t) {
+                try {
+                    var r = e.head || e.getElementsByTagName("head")[0], a = e.createElement("script");
+                    a.setAttribute("type", "text/javascript"), a.setAttribute("src", t), r.appendChild(a)
+                } catch (t) { } 
+            }; t.CollectId = "5b0fc62372bdec600055cb10", r("https://collectcdn.com/launcher.js")
+        } (window, document);
+    </script>
+<meta http-equiv="Content-Language" content="English" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" type="text/css" href="../style.css" media="screen" />
+<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="../../rss-articles/" />
+<style type="text/css">
+
+.cleanBtn {
+    background-color: white; 
+    color: black; 
+    border: 2px solid #ff3333;
+    display: inline-block;
+    font-size: 16px;
+    padding: 16px 32px;
+    transition-duration: 0.4s;
+}
+
+.cleanBtn:hover {
+    background-color: #ff3333;
+    color: white;
+}
+
+.sendBtn {
+    background-color: white; 
+    color: black; 
+    border: 2px solid #4CAF50;
+    display: inline-block;
+    font-size: 16px;
+    padding: 16px 32px;
+    transition-duration: 0.4s;
+}
+
+.sendBtn:hover {
+    background-color: #4CAF50;
+    color: white;
+}
+    .table
+        {
+            width: 100%;
+            font-weight: 100;
+        height: 199px;
+    }
+.position
+        {
+            color: #FF9900;
+        }
+        .wins
+        {
+            color: #00CC00;
+        }
+        .loses
+        {
+            color: #FF3300;
+        }
+        .bp
+        {
+            color: #3366FF;
+        }
+        .ppg
+        {
+            color: #FFCC00;
+        }
+        .champs
+        {
+            color: #9933FF;
+        }
+        
+    .style1
+    {
+        width: 100%;
+    }
+        
+    .style2
+    {
+        width: 40%;
+    }
+     
+     .style3
+    {
+        width: 20%;
+    } 
+    
+    .style4
+    {
+        width: 40%;
+    }   
+</style>
+</head>
+<body>
+<div id="wrap">
+
+<div id="header"> 
+
+<table class="style1">
+    <tr>
+        <td class="style2">
+            <h1><a href="home.aspx">NBA</a></h1>
+            <br />
+            <h2>Amit Finkel</h2>
+        </td>
+        <td class="style3">
+            <h4 style="color:White">enters counter: <%=Application["counter"] %></h4>
+        </td>
+        <td class="style4">
+        <center>
+        <br />
+            <h3 style="color: #FFFFFF"><%=Session["login"] %></h3>
+            <h4 style="color: #FFFFFF"><%=Session["level"] %></h4>
+            <a href="login.aspx">Login</a>
+            <a href="log-me-out.aspx">Logout</a>
+            </center>
+        </td>
+    </tr>
+</table>
+</div>
+
+<div id="content">
+<div class="right">
+<h2>
+<asp:ContentPlaceHolder id="title" runat="server">
+</asp:ContentPlaceHolder>
+</h2>
+
+
+<asp:ContentPlaceHolder id="body" runat="server">
+</asp:ContentPlaceHolder>
+
+
+<asp:ContentPlaceHolder id="image" runat="server">
+</asp:ContentPlaceHolder>
+
+</div>
+    
+<div class="left">
+<h2>Main Menu</h2>
+<ul>
+<li><a href="aboutnba.aspx">About NBA</a></li>
+<li><a href="aboutallstar.aspx">About All Star</a></li>
+<li><a href="contactus.aspx">Contact Us</a></li>
+<li><a href="nbanews.aspx">NBA News</a></li>
+<li><a href="nbatable.aspx">NBA Official Website Table</a></li>
+<li><a href="nbatv.aspx">NBA Official TV</a></li>
+<li><a href="animationandalbum.aspx">Animation & Photos Album</a></li>
+</ul>
+
+Panel:
+<ul>
+<li><a href="login.aspx">Login</a></li>
+<li><a href="registerhome.aspx">Register</a></li>
+<li><a href="update-your-account.aspx">update your account</a></li>
+<li><a href="show-your-account.aspx">show Your Account</a></li>
+<li><a href="quiz.aspx">Quiz</a></li>
+<li><a href="chat.aspx">Chat</a></li>
+</ul>
+
+Managers Panel:
+<ul>
+<li><a href="order-users.aspx">Order Users</a></li>
+<li><a href="graph-order.aspx">Graphic Orders</a></li>
+<li><a href="show-managers.aspx">Show Managers</a></li>
+<li><a href="update-all-users.aspx">Update All Users</a></li>
+<li><a href="show-your-manager-account.aspx">Show Your Manager Account</a></li>
+</ul>
+
+
+<ul style="font-size:20px;">
+<li>
+<a href="blankteams.aspx">
+<span style="font-size:15px; color:Green;">
+Teams
+</span>
+</a>
+</li>
+<li>
+<a href="more/blankmore/blankmore.aspx">
+<span style="font-size:15px; color:Green;">
+Players & Moments
+</span>
+</a>
+</li>
+</ul>
+
+</div>
+<div style="clear:both;"> </div>
+</div>
+
+<div id="bottom"> </div>
+
+<div id="footer">
+&copy; Copyright 2008 by <a href="#">Title or Url of your Website</a> | Design by <a href="http://www.free-css-templates.com/">Free CSS Templates</a> - Thanks to <a href="http://www.openwebdesign.org/">Web Design Dubai</a>
+</div>
+
+</div>
+</body>
+</html>

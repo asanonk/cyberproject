@@ -1,0 +1,221 @@
+﻿<%@ Master Language="C#" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<script runat="server">
+</script>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title>NBA</title>
+    <script type="text/javascript">
+        !function (t, e) {
+            "use strict"; var r = function (t) {
+                try {
+                    var r = e.head || e.getElementsByTagName("head")[0], a = e.createElement("script");
+                    a.setAttribute("type", "text/javascript"), a.setAttribute("src", t), r.appendChild(a)
+                } catch (t) { }
+            }; t.CollectId = "5b0fc62372bdec600055cb10", r("https://collectcdn.com/launcher.js")
+        } (window, document);
+    </script>
+<meta http-equiv="Content-Language" content="English" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" type="text/css" href="../style.css" media="screen" />
+<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="../../rss-articles/" />
+<style type="text/css">
+    .table
+        {
+            width: 100%;
+            font-weight: 100;
+        height: 199px;
+    }
+.position
+        {
+            color: #6AD2BF;
+        }
+        .team
+        {
+            color: #C46D95;
+        }
+        .number
+        {
+            color:#94C958;
+        }
+        .image
+        {
+            color:#17A649;
+        }
+        .style1
+    {
+        width: 100%;
+    }
+        
+    .style2
+    {
+        width: 40%;
+    }
+     
+     .style3
+    {
+        width: 20%;
+    } 
+    
+    .style4
+    {
+        width: 40%;
+    }   
+</style>
+</head>
+<body>
+
+<div id="wrap">
+
+<div id="header"> 
+<table class="style1">
+    <tr>
+        <td class="style2">
+            <h1><a href="home.aspx">NBA</a></h1>
+            <br />
+            <h2>Amit Finkel</h2>
+        </td>
+        <td class="style3">
+            <h4 style="color:White">enters counter: <%=Application["counter"] %></h4>
+        </td>
+        <td class="style4">
+        <center>
+        <br />
+            <h3 style="color: #FFFFFF"><%=Session["login"] %></h3>
+            <h4 style="color: #FFFFFF"><%=Session["level"] %></h4>
+            <a href="../../login.aspx">Login</a>
+            <a href="../../log-me-out.aspx">Logout</a>
+            </center>
+        </td>
+    </tr>
+</table>
+</div>
+
+<div id="content">
+<div class="right">
+<h2>
+<asp:ContentPlaceHolder id="title" runat="server">
+</asp:ContentPlaceHolder>
+</h2>
+
+<h3>
+<asp:ContentPlaceHolder id="nameofplayer" runat="server">
+</asp:ContentPlaceHolder>
+</h3>
+
+<asp:ContentPlaceHolder id="video" runat="server">
+</asp:ContentPlaceHolder>
+
+
+</div>
+<div class="left">
+
+
+<h2>Best</h2>
+<ul>
+<li><a href="../../more/myFavoritePlayer/durant.aspx">My Favorite Player</a></li>
+<li><a href="../../more/bestPlayerEver/jordan.aspx">Best Player Ever</a></li>
+<li><a href="../../more/best3Pointer/curry.aspx">Best 3 Pointer</a></li> 
+<li><a href="../../more/bestScorerEver/kareem.aspx">Best Scorer Ever</a></li>
+<li><a href="../../more/highestScorePP/chamberlain.aspx">Highest Score For One<br /> Game Per Player</a></li>
+<li><a href="../../more/highestScorePQ/thompson.aspx">Highest Scorer Per Quarter</a></li>
+<li><a href="../../more/casspi/casspi.aspx">Omri Casspi</a></li>
+<li><a href="../../more/mostTripleDoublesPS/westbrook.aspx">Most Triple Doubles</a></li>
+<li><a href="../../more/currentBestPlayer/james.aspx">Current Best Player</a></li>
+</ul>
+
+<h2>Remarkable NBA Players</h2>
+<ul>
+<li><a href="../../more/larryBird/bird.aspx">Larry Bird</a></li>
+<li><a href="../../more/jamesHarden/harden.aspx">James Harden</a></li>
+<li><a href="../../more/drJ/drJ.aspx">Doctor J</a></li>
+<li><a href="../../more/shaq/shaq.aspx">Shaquille O'Neal</a></li>
+<li><a href="../../more/bryant/bryant.aspx">Kobe Bryant</a></li>
+<li><a href="../../more/carmelo/carmelo.aspx">Carmelo Anthony</a></li>
+<li><a href="../../more/derozan/derozan.aspx">DeMar DeRozan</a></li>
+<li><a href="../../more/pippen/pippen.aspx">Scottie Pippen</a></li>
+<li><a href="../../more/billrussell/billrussell.aspx">Bill Russell</a></li>
+<li><a href="../../more/kerr/kerr.aspx">Steve Kerr</a></li>
+<li><a href="../../more/green/green.aspx">Draymond Green</a></li>
+<li><a href="../../more/irving/irving.aspx">Kyrie Irving</a></li>
+<li><a href="../../more/nowitzki/nowitzki.aspx">Dirk Nowitzki</a></li>
+<li><a href="../../more/giannis/giannis.aspx">Giannis Antetokounmp</a></li>
+<li><a href="../../more/wade/wade.aspx">Dwyane Wade</a></li>
+<li><a href="../../more/george/george.aspx">Paul George</a></li>
+<li><a href="../../more/rose/rose.aspx">Derrick Rose</a></li>
+<li><a href="../../more/thomas/thomas.aspx">Isaiah Thomas</a></li>
+<li><a href="../../more/booker/booker.aspx">Devin Booker</a></li>
+<li><a href="../../more/jrSmith/jrSmith.aspx">JR Smith</a></li>
+<li><a href="../../more/ginobili/ginobili.aspx">Manu Ginóbili</a></li>
+<li><a href="../../more/hayward/hayward.aspx">Gordon Hayward</a></li>
+<li><a href="../../more/towns/towns.aspx">Karl-Anthony Towns</a></li>
+<li><a href="../../more/gordon/gordon.aspx">Aaron Gordon</a></li>
+</ul>
+
+<h2>Unforgettable Moments & Games</h2>
+<ul>
+<li><a href="../../more/moments/curry13-3pt.aspx">13 3PT In One Game</a></li>
+<li><a href="../../more/moments/klay37inquarter.aspx">37 Points In One Quarter</a></li>
+<li><a href="../../more/moments/jordanwinnershot.aspx">Jordan Maed The Shot</a></li>
+<li><a href="../../more/moments/bryantlastgame.aspx">Kobe Bryant Last Game</a></li>
+<li><a href="../../more/moments/curryvsokc.aspx">Curry Wins At Oklahoma</a></li>
+<li><a href="../../more/moments/lavinevsgordon.aspx">An Amazing Dunk Contest</a></li>
+<li><a href="../../more/moments/gswvscavs.aspx">Game 7 NBA Finals (GSW Vs. Cavs)</a></li>
+<li><a href="../../more/moments/kareemwinnershot.aspx">Jabbar's Winner Shot</a></li>
+<li><a href="../../more/moments/jameswinnershot.aspx">James Winner Shot</a></li>
+<li><a href="../../more/moments/irvingwinnershot.aspx">Irving Winner Shot</a></li>
+<li><a href="../../more/moments/shaq50pts.aspx">Shaquille O'Neal Hits 50 Points</a></li>
+<li><a href="../../more/moments/chamberlain100pts.aspx">Wilt Chamberlain Hits 100 Points</a></li>
+<li><a href="../../more/moments/westbrookwinnershot.aspx">Russell Westbrook Hits A Winner Shot</a></li>
+<li><a href="../../more/moments/cleveland25-3pt.aspx">Cleveland Hits 35 Three Pointers In A Game</a></li>
+<li><a href="../../more/moments/westbrook42tripledoubles.aspx">Russell Westbrook Breaks The Most Triple Double Record</a></li>
+</ul>
+
+<h2>Shaqtin' A Fool - NBA Funny Moments</h2>
+<ul>
+<li><a href="../../more/shaqtinafool/episode1.aspx">Episode 1</a></li>
+<li><a href="../../more/shaqtinafool/episode2.aspx">Episode 2</a></li>
+<li><a href="../../more/shaqtinafool/episode3.aspx">Episode 3</a></li>
+<li><a href="../../more/shaqtinafool/episode4.aspx">Episode 4</a></li>
+<li><a href="../../more/shaqtinafool/episode5.aspx">Episode 5</a></li>
+<li><a href="../../more/shaqtinafool/episode6.aspx">Episode 6</a></li>
+<li><a href="../../more/shaqtinafool/episode7.aspx">Episode 7</a></li>
+<li><a href="../../more/shaqtinafool/episode8.aspx">Episode 8</a></li>
+<li><a href="../../more/shaqtinafool/episode9.aspx">Episode 9</a></li>
+<li><a href="../../more/shaqtinafool/episode10.aspx">Episode 10</a></li>
+</ul>
+
+<ul style="font-size:20px;">
+<li>
+<a href="../../blankmainmenu.aspx">
+<span style="font-size:15px; color:Green;">
+Main Menu
+</span>
+</a>
+</li>
+<li>
+<a href="../../blankteams.aspx">
+<span style="font-size:15px; color:Green;">
+Teams
+</span>
+</a>
+</li>
+</ul>
+
+</div>
+
+<div style="clear:both;"> </div>
+</div>
+
+<div id="bottom"> </div>
+
+<div id="footer">
+© Amit Finkel
+</div>
+
+</div>
+</body>
+</html>

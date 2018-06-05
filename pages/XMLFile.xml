@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MANAGERS>
+  <USER>
+    <USERNAME>amitfinkel</USERNAME>
+    <PASSWORD>amitfinkel</PASSWORD>
+    <FIRSTNAME>עמית</FIRSTNAME>
+    <LASTNAME>פינקל</LASTNAME>
+    <EMAIL>amitfinkel100@gmail.com</EMAIL>
+  </USER>
+
+  <USER>
+    <USERNAME>manager</USERNAME>
+    <PASSWORD>manager</PASSWORD>
+    <FIRSTNAME>מנהל</FIRSTNAME>
+    <LASTNAME>שני</LASTNAME>
+    <EMAIL>manager@gmail.com</EMAIL>
+  </USER>
+</MANAGERS>
