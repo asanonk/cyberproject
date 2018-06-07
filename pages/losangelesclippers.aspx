@@ -17,8 +17,10 @@ Los Angeles Clippers
 16
 </asp:Content>
 <asp:Content ID="Content5" ContentPlaceHolderID="bp" Runat="Server">
+    <a href="more/griffin/griffin.aspx">
     <img src="../teams/losangelesclippers/griffin.png" alt="griffin" width="270"/>
 	Blake Griffin
+    </a>
 </asp:Content>
 <asp:Content ID="Content6" ContentPlaceHolderID="ppg" Runat="Server">
 104.4

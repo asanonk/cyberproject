@@ -17,8 +17,10 @@ Sacramento Kings
 19
 </asp:Content>
 <asp:Content ID="Content5" ContentPlaceHolderID="bp" Runat="Server">
+    <a href="more/carter/carter.aspx">
     <img src="../teams/sacramento/carter.jpg" alt="carter" width="270"/>
 	Vince Carter
+    </a>
 </asp:Content>
 <asp:Content ID="Content6" ContentPlaceHolderID="ppg" Runat="Server">
 96.2

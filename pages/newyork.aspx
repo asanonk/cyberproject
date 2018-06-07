@@ -17,8 +17,10 @@ New York Knicks
 13
 </asp:Content>
 <asp:Content ID="Content5" ContentPlaceHolderID="bp" Runat="Server">
+    <a href="more/prozingis/prozingis.aspx">
     <img src="../teams/newyork/prozingis.png" alt="prozingis" width="270"/>
     Kristaps Prozingis
+    </a>
 </asp:Content>
 <asp:Content ID="Content6" ContentPlaceHolderID="ppg" Runat="Server">
 104.3

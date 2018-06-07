@@ -26,8 +26,10 @@ San Antonio Spurs
 10
 </asp:Content>
 <asp:Content ID="Content5" ContentPlaceHolderID="bp" Runat="Server">
+    <a href="more/leonard/leonard.aspx">
     <img src="../teams/sanantonio/kawhi.png" alt="kawhi" width="270"/>
 	Kawhi Leonard
+    </a>
 </asp:Content>
 <asp:Content ID="Content6" ContentPlaceHolderID="ppg" Runat="Server">
 101.3

@@ -23,7 +23,7 @@ Golden State Warriors
     <a href="more/best3Pointer/curry.aspx">
     <img src="../teams/goldenstate/curry.png" alt="curry" width="135"/>
     </a>
-	Kevin Durant<span style="font-size:14px">&</span>Stephen Curry
+	<a href="more/myFavoritePlayer/durant.aspx">Kevin Durant</a><span style="font-size:14px">&</span><a href="more/best3Pointer/curry.aspx">Stephen Curry</a>
 </asp:Content>
 <asp:Content ID="Content6" ContentPlaceHolderID="ppg" Runat="Server">
 103.0

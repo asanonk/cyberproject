@@ -17,8 +17,10 @@ Philadelphia 76ers
 13
 </asp:Content>
 <asp:Content ID="Content5" ContentPlaceHolderID="bp" Runat="Server">
+    <a href="more/simmons/simmons.aspx">
     <img src="../teams/philadelphia/simmons.jpg" alt="simmons" width = "270"/>
 Ben Simmons
+</a>
 </asp:Content>
 <asp:Content ID="Content6" ContentPlaceHolderID="ppg" Runat="Server">
 108.6

@@ -17,8 +17,10 @@ Memphis Grizzlies
 20
 </asp:Content>
 <asp:Content ID="Content5" ContentPlaceHolderID="bp" Runat="Server">
+    <a href="more/gasol/gasol.aspx">
     <img src="../teams/memphis/marcgasol.png" alt="nowitzki" width="270"/>
 	Marc Gasol
+    </a>
 </asp:Content>
 <asp:Content ID="Content6" ContentPlaceHolderID="ppg" Runat="Server">
 97.2

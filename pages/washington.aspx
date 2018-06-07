@@ -17,8 +17,10 @@ Washington Wizards
 13
 </asp:Content>
 <asp:Content ID="Content5" ContentPlaceHolderID="bp" Runat="Server">
+    <a href="more/wall/wall.aspx">
     <img src="../teams/washington/wall.png" alt="wall" width="270"/>
 John Wall
+</a>
 </asp:Content>
 <asp:Content ID="Content6" ContentPlaceHolderID="ppg" Runat="Server">
 105.6

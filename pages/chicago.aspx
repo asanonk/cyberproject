@@ -17,8 +17,10 @@ Chicago Bulls
 20
 </asp:Content>
 <asp:Content ID="Content5" ContentPlaceHolderID="bp" Runat="Server">
+    <a href="more/lavine/lavine.aspx">
     <img src="../teams/chicago/lavine.png" alt="zach lavine" width="270"/>
     Zach Lavine
+    </a>
 </asp:Content>
 <asp:Content ID="Content6" ContentPlaceHolderID="ppg" Runat="Server">
 97.6

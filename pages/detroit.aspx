@@ -21,8 +21,9 @@ Detrois Pistons
 </asp:Content>
 
 <asp:Content ID="Content5" ContentPlaceHolderID="bp" Runat="Server">
+    <a href="more/drummond/drummond.aspx">
     <img src="../teams/detroit/drummond.png" alt="drummond" width="270"/>
-    Andre Drummond
+    Andre Drummond</a>
 </asp:Content>
 
 <asp:Content ID="Content6" ContentPlaceHolderID="ppg" Runat="Server">

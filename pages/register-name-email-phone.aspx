@@ -22,6 +22,10 @@
     
     protected void Page_Load(object sender, EventArgs e)
     {
+        if (Session["login"] != "אורח")
+        {
+            Response.Redirect("logout-first.aspx");
+        }
         Session["usernameComment"] = "";
         
         if (Request.Form["submitBtn"] != null)

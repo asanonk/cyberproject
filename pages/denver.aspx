@@ -17,8 +17,10 @@ Denver Nuggets
 13
 </asp:Content>
 <asp:Content ID="Content5" ContentPlaceHolderID="bp" Runat="Server">
+    <a href="more/millsap/millsap.aspx">
     <img src="../teams/denver/millsap.jpg" alt="millsap" width="270"/>
 	Paul Millasp
+    </a>
 </asp:Content>
 <asp:Content ID="Content6" ContentPlaceHolderID="ppg" Runat="Server">
 107.5

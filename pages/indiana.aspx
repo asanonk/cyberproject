@@ -21,8 +21,10 @@ Indiana Pacers
 </asp:Content>
 
 <asp:Content ID="Content5" ContentPlaceHolderID="bp" Runat="Server">
+    <a href="more/oladipo/oladipo.aspx">
     <img src="../teams/indiana/oladipo.png" alt="oladipo" width="270"/>
     Victor Oladipo
+    </a>
 </asp:Content>
 
 <asp:Content ID="Content6" ContentPlaceHolderID="ppg" Runat="Server">

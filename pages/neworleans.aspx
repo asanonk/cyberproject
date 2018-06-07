@@ -17,9 +17,14 @@ New Orleans Pelicans
 20
 </asp:Content>
 <asp:Content ID="Content5" ContentPlaceHolderID="bp" Runat="Server">
-    <img src="../teams/neworleans/cousins.png" alt="durant" width="135"/>
-    <img src="../teams/neworleans/davis.png" alt="curry" width="135"/>
-	DeMarcus Cousins<span style="font-size:14px">&</span>Anthony Davis
+    <a href="more/cousins/cousins.aspx">
+    <img src="../teams/neworleans/cousins.png" alt="cousins" width="135"/>
+    </a>
+    <a href="more/davis/davis.aspx">
+    <img src="../teams/neworleans/davis.png" alt="davis" width="135"/>
+    </a>
+	
+    <a href="more/cousins/cousins.aspx">DeMarcus Cousins</a><span style="font-size:14px">&</span><a href="more/davis/davis.aspx">Anthony Davis</a>
 </asp:Content>
 <asp:Content ID="Content6" ContentPlaceHolderID="ppg" Runat="Server">
 110.8

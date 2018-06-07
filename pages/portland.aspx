@@ -17,8 +17,10 @@ Portland Trail Blazers
 13
 </asp:Content>
 <asp:Content ID="Content5" ContentPlaceHolderID="bp" Runat="Server">
+    <a href="more/lillard/lillard.aspx">
     <img src="../teams/portland/lillard.png" alt="lillard" width="270"/>
 	Damian Lillard
+    </a>
 </asp:Content>
 <asp:Content ID="Content6" ContentPlaceHolderID="ppg" Runat="Server">
 103.3

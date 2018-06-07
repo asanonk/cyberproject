@@ -17,8 +17,10 @@ Miami Heat
 14
 </asp:Content>
 <asp:Content ID="Content5" ContentPlaceHolderID="bp" Runat="Server">
+    <a href="more/whiteside/whiteside.aspx">
     <img src="../teams/miami/witeside.jpg" />
     Hassan Whiteside
+    </a>
 </asp:Content>
 <asp:Content ID="Content6" ContentPlaceHolderID="ppg" Runat="Server">
 100.3

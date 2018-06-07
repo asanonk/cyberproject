@@ -17,8 +17,10 @@ Los Angeles Lakers
 16
 </asp:Content>
 <asp:Content ID="Content5" ContentPlaceHolderID="bp" Runat="Server">
+    <a href="more/kuzma/kuzma.aspx">
     <img src="../teams/losangeleslakers/kuzma.png" alt="griffin" width="270"/>
 	Kyle Kuzma
+    </a>
 </asp:Content>
 <asp:Content ID="Content6" ContentPlaceHolderID="ppg" Runat="Server">
 106.3

@@ -21,8 +21,10 @@ Brooklyn Nets
 </asp:Content>
 
 <asp:Content ID="Content5" ContentPlaceHolderID="bp" Runat="Server">
+<a href="more/dangelo-russell/dangelo-russell.aspx">
     <img src="../teams/brooklyn/dAngeloRussell.png" alt="russell" width="270"/>
     D'angelo Russell
+    </a>
 </asp:Content>
 
 <asp:Content ID="Content6" ContentPlaceHolderID="ppg" Runat="Server">

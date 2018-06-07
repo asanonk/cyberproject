@@ -17,8 +17,10 @@ Atlanta Hawks
 21
 </asp:Content>
 <asp:Content ID="Content5" ContentPlaceHolderID="bp" Runat="Server">
+    <a href="more/Schroder/Schroder.aspx">
     <img src="../teams/atlanta/schroder.jpg" alt="schroder" width="270"/>
 	Dennis Schröder
+    </a>
 </asp:Content>
 <asp:Content ID="Content6" ContentPlaceHolderID="ppg" Runat="Server">
 103.9

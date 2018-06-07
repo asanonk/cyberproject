@@ -165,7 +165,7 @@
 Panel:
 <ul>
 <li><a href="login.aspx">Login</a></li>
-<li><a href="registerhome.aspx">Register</a></li>
+<li><a href="register-name-email-phone.aspx">Register</a></li>
 <li><a href="update-your-account.aspx">update your account</a></li>
 <li><a href="show-your-account.aspx">show Your Account</a></li>
 <li><a href="quiz.aspx">Quiz</a></li>

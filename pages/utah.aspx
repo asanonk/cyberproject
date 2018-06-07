@@ -17,8 +17,10 @@ Utah Jazz
 15
 </asp:Content>
 <asp:Content ID="Content5" ContentPlaceHolderID="bp" Runat="Server">
+    <a href="more/rubio/rubio.aspx">
     <img src="../teams/utah/rubio.png" alt="rubio" width="270"/>
 	Ricky Rubio
+    </a>
 </asp:Content>
 <asp:Content ID="Content6" ContentPlaceHolderID="ppg" Runat="Server">
 103.0

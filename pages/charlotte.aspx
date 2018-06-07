@@ -17,8 +17,10 @@ Charlotte Hornets
 17
 </asp:Content>
 <asp:Content ID="Content5" ContentPlaceHolderID="bp" Runat="Server">
+    <a href="more/walker/walker.aspx">
     <img src="../teams/charlotte/walker.jpg" alt="kemba" width="270"/>
 Kemba Walker
+</a>
 </asp:Content>
 <asp:Content ID="Content6" ContentPlaceHolderID="ppg" Runat="Server">
 104.7

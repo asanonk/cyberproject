@@ -26,6 +26,10 @@
     }
     protected void Page_Load(object sender, EventArgs e)
     {
+        if (Session["login"] != "אורח")
+        {
+            Response.Redirect("logout-first.aspx");
+        }
         if (Request.Form["submitBtn"] != null)
         {
             string username = Request.Form["username"];
