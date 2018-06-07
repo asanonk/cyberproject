@@ -6,6 +6,7 @@
     {
         Session["login"] = "אורח";
         Session["level"] = "אורח באתר";
+        Session.Abandon();
         Response.Redirect("login.aspx");
     }
 </script>

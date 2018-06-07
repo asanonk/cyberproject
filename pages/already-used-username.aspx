@@ -20,7 +20,6 @@
         conObj.Close();
         Session["usernameComment"] = "a good choice";
         return false;
-        Session.Abandon();
     }
     protected void Page_Load(object sender, EventArgs e)
     {

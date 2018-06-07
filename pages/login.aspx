@@ -3,7 +3,27 @@
 <%@ Import Namespace="System.Data" %>
 
 <script runat="server">
-
+    string ColorForTheChat()
+    {
+        Random r = new Random();
+        int number = r.Next(1, 5);
+        if (number == 1)
+        {
+            return "Blue";
+        }
+        else if (number == 2)
+        {
+            return "Yellow";
+        }
+        else if (number == 3)
+        {
+            return "Orange";
+        }
+        else
+        {
+            return "Green";
+        }
+    }
     protected void Page_Load(object sender, EventArgs e)
     {
         if (Request.Form["submitBtn"] != null)
@@ -22,6 +42,7 @@
                 {
                     Session["login"] = username;
                     Session["level"] = "משתמש רגיל";
+                    Session["color"] = ColorForTheChat();
                     Response.Redirect("login-welcomeback.aspx");
                 }
                 else
