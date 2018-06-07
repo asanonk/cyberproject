@@ -11,7 +11,7 @@ Clippers Best Player
 Blake Griffin
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="image" Runat="Server">
-    <img src="../../../teams/losangelesclippers/griffin.png" width="200"/>
+    <img src="../../../teams/losangelesclippers/griffin.png" width="200" alt="griffin"/>
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="position" Runat="Server">
 Center / Power Forward

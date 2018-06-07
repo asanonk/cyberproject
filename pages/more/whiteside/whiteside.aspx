@@ -11,7 +11,7 @@ Miami Best Player
 Hassan Whiteside
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="image" Runat="Server">
-    <img src="../../../teams/miami/witeside.jpg" width="200"/>
+    <img src="../../../teams/miami/witeside.jpg" width="200" alt="whiteside"/>
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="position" Runat="Server">
 Center

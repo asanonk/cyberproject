@@ -11,7 +11,7 @@ Memphis Best Player
 Masc Gasol
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="image" Runat="Server">
-    <img src="../../../teams/memphis/marcgasol.png" width="200"/>
+    <img src="../../../teams/memphis/marcgasol.png" width="200" alt="gasol"/>
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="position" Runat="Server">
 Center

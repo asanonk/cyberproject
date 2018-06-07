@@ -11,7 +11,7 @@ Jazz Best Player
 Ricky Rubio
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="image" Runat="Server">
-    <img src="../../../teams/utah/rubio.png" width="200"/>
+    <img src="../../../teams/utah/rubio.png" width="200" alt="rubio"/>
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="position" Runat="Server">
 Point Guard

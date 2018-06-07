@@ -11,7 +11,7 @@ Portland Best Player
 Damian Lillard
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="image" Runat="Server">
-    <img src="../../../teams/portland/lillard.png" width="200"/>
+    <img src="../../../teams/portland/lillard.png" width="200" alt="lillard"/>
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="position" Runat="Server">
 Point Guard

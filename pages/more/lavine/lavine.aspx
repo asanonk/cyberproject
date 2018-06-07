@@ -11,7 +11,7 @@ Chicago Best Player
 Zach Lavine
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="image" Runat="Server">
-    <img src="../../../teams/chicago/lavine.png" width="200"/>
+    <img src="../../../teams/chicago/lavine.png" width="200" alt="lavine"/>
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="position" Runat="Server">
 Point Guard

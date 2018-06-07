@@ -11,7 +11,7 @@ Charlotte Best Player
 Kemba Walker
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="image" Runat="Server">
-    <img src="../../../teams/charlotte/walker.jpg" width="200"/>
+    <img src="../../../teams/charlotte/walker.jpg" width="200" alt="walker"/>
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="position" Runat="Server">
 Point Guard

@@ -11,7 +11,7 @@ New York Knicks Best Player
 Kristaps Prozingis
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="image" Runat="Server">
-    <img src="../../../teams/newyork/prozingis.png" width="200"/>
+    <img src="../../../teams/newyork/prozingis.png" width="200" alt="prozingis"/>
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="position" Runat="Server">
 Power Forward / Center

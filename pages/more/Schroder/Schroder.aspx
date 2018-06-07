@@ -11,7 +11,7 @@ Atlanta Best Player
 Dennis Schröder
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="image" Runat="Server">
-    <img src="../../../teams/atlanta/schroder.jpg" width="200"/>
+    <img src="../../../teams/atlanta/schroder.jpg" width="200" alt="schroder"/>
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="position" Runat="Server">
 Poit Guard

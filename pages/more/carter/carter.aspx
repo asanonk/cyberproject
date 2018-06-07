@@ -11,7 +11,7 @@ Sacramento Best Player
 Vince Carter
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="image" Runat="Server">
-    <img src="../../../teams/sacramento/carter.jpg" width="200"/>
+    <img src="../../../teams/sacramento/carter.jpg" width="200" alt="carter"/>
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="position" Runat="Server">
 Point Guard

@@ -11,7 +11,7 @@ Denver Best Player
 Paul Millsap
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="image" Runat="Server">
-    <img src="../../../teams/denver/millsap.jpg" width="200"/>
+    <img src="../../../teams/denver/millsap.jpg" width="200" alt="millsap"/>
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="position" Runat="Server">
 Center / Power Forward

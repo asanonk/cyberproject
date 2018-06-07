@@ -11,7 +11,7 @@ Detroit Best Player
 Andre Drummond
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="image" Runat="Server">
-    <img src="../../../teams/detroit/drummond.png" width="200"/>
+    <img src="../../../teams/detroit/drummond.png" width="200" alt="drummond"/>
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="position" Runat="Server">
 Center

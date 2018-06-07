@@ -11,7 +11,7 @@ Washington Best Player
 John Wall
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="image" Runat="Server">
-    <img src="../../../teams/washington/wall.png" width="200"/>
+    <img src="../../../teams/washington/wall.png" width="200" alt="wall"/>
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="position" Runat="Server">
 Point Guard

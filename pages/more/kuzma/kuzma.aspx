@@ -11,7 +11,7 @@ Lakers Best Player
 Kyle Kuzma
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="image" Runat="Server">
-    <img src="../../../teams/losangeleslakers/kuzma.png" width="200"/>
+    <img src="../../../teams/losangeleslakers/kuzma.png" width="200" alt="kuzma"/>
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="position" Runat="Server">
 Point Guard
