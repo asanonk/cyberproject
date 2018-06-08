@@ -24,19 +24,19 @@
 
 <td>
 <a href = "login.aspx">
-<img src="../login-homepicture.png" alt="login" width="400"/>
+<img src="../login-homepicture.png" alt="login" width="250"/>
 </a>
 </td>
 
 <td>
 <a href = "aboutnba.aspx">
-<img src="../nbalogonobackground.png" alt="nbalogo" width="450"/>
+<img src="../nbalogonobackground.png" alt="nbalogo" width="270"/>
 </a>
 </td>
 
 <td>
 <a href = "boston.aspx">
-<img src="../browsenobackground.png" alt="browse" width="450"/>
+<img src="../browsenobackground.png" alt="browse" width="270"/>
 </a>
 </td>
 

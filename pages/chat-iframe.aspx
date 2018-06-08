@@ -9,6 +9,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
+    <meta http-equiv="refresh" content="4" url="Cht.aspx"  />
     <style type="text/css">
         .message
         {
