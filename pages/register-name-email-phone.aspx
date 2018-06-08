@@ -121,6 +121,10 @@ Register
                 document.getElementById("nameComment").innerHTML = "must be filled";
                 return false;
             }
+            if (name.length < 3) {
+                document.getElementById("nameComment").innerHTML = "enter your full name";
+                return false;
+            }
             for (var i = 0; i < name.length; i++) {
                 var found = false; 
                 for (var k = 0; k < letters.length; k++) {
@@ -231,31 +235,72 @@ Register
         }
 
 
+        var emailValidChars = "@.abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+        function checkMatchChars(validChars, value) {
+            var currentChar;
+            var valid = false;
+            // value.length - checking each letter
+            for (var i = 0; i < value.length; i++) {
+                currentChar = value.charAt(i);
+                // checking each valid char to the current letter
+                for (var j = 0; j < validChars.length; j++) {
+                    if (currentChar == validChars.charAt(j)) {
+                        valid = true;
+                    }
+                }
+                if (!valid) {
+                    return false
+                }
+            }
+            return true;
+        }
+
         function CheckEmail() {
-            var email = String(document.getElementById("email").value);
-            if (email == "") {
+            var email = document.getElementById("email").value;
+            var atPosition = email.indexOf('@');
+            var lastDot = email.lastIndexOf('.');
+            var beforeAt = email.split('@', 1);
+            var valid = checkMatchChars(emailValidChars, email);
+            if (email != "") {
+                if (valid) {
+                    if (atPosition == -1) {
+                        document.getElementById("emailComment").innerHTML = "you don't have a @";
+                        return false;
+                    }
+                    if (atPosition == 0) {
+                        document.getElementById("emailComment").innerHTML = "you must have at least one char before the @";
+                        return false;
+                    }
+                    if (email.lastIndexOf('@') != atPosition) {
+                        document.getElementById("emailComment").innerHTML = "you have more than one @";
+                        return false;
+                    }
+                    if (lastDot < atPosition) {
+                        document.getElementById("emailComment").innerHTML = "email must conclude a dot after the @";
+                        return false;
+                    }
+                    if (lastDot + 2 >= email.length) {
+                        document.getElementById("emailComment").innerHTML = "email must conclude at least two chars after the dot";
+                        return false;
+                    }
+                    if (lastDot < atPosition + 2) {
+                        document.getElementById("emailComment").innerHTML = "email must conclude text between the @ the the dot";
+                        return false;
+                    }
+                    document.getElementById("emailComment").innerHTML = "";
+                    return true;
+                }
+                else {
+                    document.getElementById("emailComment").innerHTML = "onlt number, english letters and dots are valid";
+                    return false;
+                }
+            }
+            else {
                 document.getElementById("emailComment").innerHTML = "must be filled";
                 return false;
             }
-            var at = false;
-            var dot = false;
-            for (var i = 0; i < email.length - 1; i++) {
-                if (at == true && email[i] == '.') {
-                    dot = true;
-                }
-                else if (email[i] == '@' && email[i + 1] != '.') {
-                    at = true;
-                }
-            }
-            if (at == true && dot == true) {
-                document.getElementById("emailComment").innerHTML = "";
-                return true;
-            }
-            else {
-                document.getElementById("emailComment").innerHTML = "unlimited email";
-                return false;
-            }
         }
+
 
 
         function CheckConfirmPassword() {
@@ -298,6 +343,7 @@ Register
             if (spacesCount == lettersCount) {
                 document.getElementById("usernameComment").innerHTML = "must be filled";
                 return false;
+
             }
             return true;
         }

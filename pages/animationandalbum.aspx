@@ -11,17 +11,27 @@ Animation & Pesentation
 <script type="text/javascript">
     //gif
     var picNumber = 0;
+    var speedPic = 1;
+    function SpeedUp() {
+        speedPic++;
+    }
+    function SpeedDown() {
+        if (speedPic <= 2) {
+            speedPic = 2;
+        }
+        speedPic--;
+    }
     var show;
     function Start() {
         show = setInterval('Animation()', 60);
     }
     function Animation() {
         document.getElementById("currentImage").src = "../animation%20images/giphy-" + picNumber + ".png";
-        if (picNumber == 73) {
+        if (picNumber >= 73) {
             picNumber = 0;
         }
         else {
-            picNumber++;
+            picNumber += speedPic;
         }
     }
     function Stop() {
@@ -50,15 +60,6 @@ Animation & Pesentation
         }
         document.getElementById("presentationImage").src = "../presentation%20images/pic" + picNo + ".jpg";
     }
-    function SpeedUp() {
-        speed++;
-    }
-    function SpeedDown() {
-        if (speed <= 0) {
-            speed = 0;
-        }
-        speed--;
-    }
     function SizeUp() {
         document.getElementById("presentationImage").width = document.getElementById("presentationImage").width + 50;
         document.getElementById("presentationImage").height = document.getElementById("presentationImage").height + 50;
@@ -79,6 +80,8 @@ Animation & Pesentation
 <br />
 <input type="button" onclick="Start()" value="Start" />
 <input type="button" onclick="Stop()" value="Stop" />
+<input type="button" onclick="SpeedUp()" value="speed up" />
+<input type="button" onclick="SpeedDown()" value="speed down" />
 <br />
 <br />
 
@@ -90,8 +93,6 @@ Animation & Pesentation
 <br />
 <input type="button" onclick="Next()" value="Next" />
 <input type="button" onclick="Back()" value="Back" />
-<input type="button" onclick="SpeedUp()" value="speed up" />
-<input type="button" onclick="SpeedDown()" value="speed down" />
 <input type="button" onclick="SizeUp()" value="size up" />
 <input type="button" onclick="SizeDown()" value="size down" />
 

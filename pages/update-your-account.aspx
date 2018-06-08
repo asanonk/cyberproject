@@ -84,7 +84,7 @@
             {
                 if (username != Session["username"].ToString())
                 {
-                    if (CheckUsername(username) == false)
+                    if (CheckUsername(username) == false && username.Length >= 3)
                     {
                         string cmdStr = string.Format("UPDATE Users SET Username = N'{0}' WHERE Username = N'{1}'", username, Session["login"]);
                         SqlCommand cmdObj = new SqlCommand(cmdStr, conObj);
@@ -315,32 +315,74 @@ if you don't want to update something - leave it blank
             }
         }
 
+        var emailValidChars = "@.abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+        function checkMatchChars(validChars, value) {
+            var currentChar;
+            var valid = false;
+            // value.length - checking each letter
+            for (var i = 0; i < value.length; i++) {
+                currentChar = value.charAt(i);
+                // checking each valid char to the current letter
+                for (var j = 0; j < validChars.length; j++) {
+                    if (currentChar == validChars.charAt(j)) {
+                        valid = true;
+                    }
+                }
+                if (!valid) {
+                    return false
+                }
+            }
+            return true;
+        }
 
         function CheckEmail() {
-            var email = String(document.getElementById("email").value);
+            var email = document.getElementById("email").value;
+            var atPosition = email.indexOf('@');
+            var lastDot = email.lastIndexOf('.');
+            var beforeAt = email.split('@', 1);
+            var valid = checkMatchChars(emailValidChars, email);
             if (email == "") {
                 return true;
             }
-            var at = false;
-            var dot = false;
-            for (var i = 0; i < email.length - 1; i++) {
-                if (at == true && email[i] == '.') {
-                    dot = true;
+            if (email != "") {
+                if (valid) {
+                    if (atPosition == -1) {
+                        document.getElementById("emailComment").innerHTML = "you don't have a @";
+                        return false;
+                    }
+                    if (atPosition == 0) {
+                        document.getElementById("emailComment").innerHTML = "you must have at least one char before the @";
+                        return false;
+                    }
+                    if (email.lastIndexOf('@') != atPosition) {
+                        document.getElementById("emailComment").innerHTML = "you have more than one @";
+                        return false;
+                    }
+                    if (lastDot < atPosition) {
+                        document.getElementById("emailComment").innerHTML = "email must conclude a dot after the @";
+                        return false;
+                    }
+                    if (lastDot + 2 >= email.length) {
+                        document.getElementById("emailComment").innerHTML = "email must conclude at least two chars after the dot";
+                        return false;
+                    }
+                    if (lastDot < atPosition + 2) {
+                        document.getElementById("emailComment").innerHTML = "email must conclude text between the @ the the dot";
+                        return false;
+                    }
+                    document.getElementById("emailComment").innerHTML = "";
+                    return true;
                 }
-                else if (email[i] == '@' && email[i + 1] != '.') {
-                    at = true;
+                else {
+                    document.getElementById("emailComment").innerHTML = "onlt number, english letters and dots are valid";
+                    return false;
                 }
-            }
-            if (at == true && dot == true) {
-                document.getElementById("emailComment").innerHTML = "";
-                return true;
             }
             else {
-                document.getElementById("emailComment").innerHTML = "unlimited email";
+                document.getElementById("emailComment").innerHTML = "must be filled";
                 return false;
             }
         }
-
 
         function CheckConfirmPassword() {
             var password = document.getElementById("password").value
