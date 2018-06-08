@@ -8,7 +8,8 @@
 In Order To Browse This Page You Need To Logout First
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="body" Runat="Server">
-    <h3><a href="log-me-out.aspx">Logout Here</a></h3>
+
+<a href="log-me-out.aspx"><button class="buttonLogin" style="vertical-align:middle"><span>Logout </span></button></a>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="image" Runat="Server">
 </asp:Content>

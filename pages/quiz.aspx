@@ -317,7 +317,7 @@ Quiz - Test Your Knowledge
 <input type="radio" name="finals" value="warriors&cavs" />Golden State Warriors & Claveland Cavaliers
 <br />
 <br />
-<input type="button" value="Finish" onclick="Check()"/>
+<input type="button" class="buttonLogin" value="Finish" onclick="Check()"/>
 <h1 id="results"></h1>
 </form>
 </asp:Content>

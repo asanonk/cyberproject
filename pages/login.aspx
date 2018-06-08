@@ -92,8 +92,9 @@ Login
 <input type="checkbox" name="managerCheck" id="managerCheck" />אני מנהל
 <br />
 <br />
-<input type="submit" value = "Login" name="submitBtn" id="submitBtn"/>
+<input type="submit" class="buttonSendLoginRegisterUpdateForm" value = "Login" name="submitBtn" id="submitBtn"/>
 </form>
+<br />
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="image" Runat="Server">
     <img src="../login.jpg" alt="login" width="540"/>

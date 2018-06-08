@@ -692,7 +692,7 @@ Register
 <p id="likedShoesComment"></p>
 <br />
 <br />
-<input type="submit" value="Next" id="submitBtn" name="submitBtn"/>
+<input type="submit" class="buttonSendLoginRegisterUpdateForm" value="Next" id="submitBtn" name="submitBtn"/>
 <br />
 <br />
     </form>

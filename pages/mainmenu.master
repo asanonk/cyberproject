@@ -18,12 +18,16 @@
             }; t.CollectId = "5b0fc62372bdec600055cb10", r("https://collectcdn.com/launcher.js")
         } (window, document);
     </script>
+    <!-- Go to www.addthis.com/dashboard to customize your tools -->
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5b1a1ff662f74f93"></script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Language" content="English" />
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link rel="stylesheet" type="text/css" href="../style.css" media="screen" />
 <link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="../../rss-articles/" />
 <style type="text/css">
-
+/* buttons for the chat open*/
 .cleanBtn {
     background-color: white; 
     color: black; 
@@ -53,6 +57,77 @@
     background-color: #4CAF50;
     color: white;
 }
+/* buttons for the chat close*/
+
+
+/* button for login/register on only users pages open*/
+.buttonLogin {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #f4511e;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.buttonLogin span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.buttonLogin span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.buttonLogin:hover span {
+  padding-right: 25px;
+}
+
+.buttonLogin:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+/* button for login/register on only users pages close*/
+/* button for login/register/update open*/
+.buttonSendLoginRegisterUpdateForm {
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+.buttonSendLoginRegisterUpdateForm:hover {background-color: #3e8e41}
+
+.buttonSendLoginRegisterUpdateForm:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+
+/* button for login/register/update close*/
+
     .table
         {
             width: 100%;

@@ -18,6 +18,8 @@
             }; t.CollectId = "5b0fc62372bdec600055cb10", r("https://collectcdn.com/launcher.js")
         } (window, document);
     </script>
+    <!-- Go to www.addthis.com/dashboard to customize your tools -->
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5b1a1ff662f74f93"></script>
 <meta http-equiv="Content-Language" content="English" />
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link rel="stylesheet" type="text/css" href="../style.css" media="screen" />

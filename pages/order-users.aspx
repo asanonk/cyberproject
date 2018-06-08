@@ -278,7 +278,8 @@ Order Users
 <option value="AreYouPlayingBasketball? + Gender">AreYouPlayingBasketball? + Gender</option>
 <option value="show all">show all</option>
 </select>
-<input type="submit" name="submitBtn" id="submitBtn" />
+<br />
+<input type="submit" class="buttonLogin" style="width: 100px; background-color:#6699ff" name="submitBtn" id="submitBtn" value="order" />
 </form>
 <h2>Ordering By: <%=Session["orderBy"] %></h2>
 <div id="orderTable"><%=Session["table"]%></div>
