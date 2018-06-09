@@ -93,6 +93,14 @@ Register
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="body" Runat="Server">
     <script type="text/javascript">
+        function ShowPassword() {
+            var obj = document.getElementById('password');
+            obj.type = "text";
+        }
+        function HidePassword() {
+            var obj = document.getElementById('password');
+            obj.type = "password";
+        }
         function Check() {
             var checkName = CheckName();
             var checkPhoneNumber = CheckPhoneNumber();
@@ -493,6 +501,7 @@ Register
 <br />
 <h5>Password</h5>
 <input type="password" value="" id="password" name="password" />
+<input type="button" onmouseover="ShowPassword()" onmouseout="HidePassword()" value="hover to see password" />
 <p id="passwordComment"></p>
 <br />
 <br />
