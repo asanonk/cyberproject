@@ -92,41 +92,7 @@
                 SqlCommand cmdObj = new SqlCommand(cmdStr, conObj);
                 cmdObj.ExecuteNonQuery();
             }
-            if (username != "")
-            {
-                if (username != Session["login"].ToString())
-                {
-                    if (CheckUsername(username) == false)
-                    {
-                        string cmdStr = string.Format("UPDATE Users SET Username = N'{0}' WHERE Username = N'{1}'", username, Session["login"]);
-                        SqlCommand cmdObj = new SqlCommand(cmdStr, conObj);
-                        cmdObj.ExecuteNonQuery();
-                        Session["usernameComment"] = "";
-                        Session["login"] = username;
-                    }
-                    else
-                    {
-                        Session["myLastUsername"] = Session["login"];
-                        Session["username"] = Request.Form["username"];
-                        Session["name"] = Request.Form["name"];
-                        Session["password"] = Request.Form["password"];
-                        Session["email"] = Request.Form["email"];
-                        Session["phoneNumber"] = Request.Form["phoneNumber"];
-                        Session["gender"] = Request.Form["gender"];
-                        Session["BDDay"] = Request.Form["BDDay"];
-                        Session["BDMonth"] = Request.Form["BDMonth"];
-                        Session["BDYear"] = Request.Form["BDYear"];
-                        Session["birthday"] = BDDay + "." + BDMonth + "." + BDYear;
-                        Session["adress"] = Request.Form["adress"];
-                        Session["currentBestPlayer"] = Request.Form["player"];
-                        Session["favoriteTeam"] = Request.Form["favoriteTeam"];
-                        Session["areYouPlayingBasketball"] = Request.Form["playing"];
-                        Session["BestPlayerEver"] = Request.Form["playerever"];
-                        Session["favoriteShoesBrand"] = Request.Form["likedShoes"];
-                        Response.Redirect("already-used-username-update-your-account.aspx");
-                    }
-                }
-            }
+            
             if (password != "")
             {
                 string cmdStr = string.Format("UPDATE Users SET Password = N'{0}' WHERE Username = N'{1}'", password, Session["login"]);
@@ -192,6 +158,26 @@
                 string cmdStr = string.Format("UPDATE Users SET FavoriteTeam = N'{0}' WHERE Username = N'{1}'", favoriteTeam, Session["login"]);
                 SqlCommand cmdObj = new SqlCommand(cmdStr, conObj);
                 cmdObj.ExecuteNonQuery();
+            }
+            if (username != "")
+            {
+                if (username != Session["login"].ToString())
+                {
+                    if (CheckUsername(username) == false)
+                    {
+                        string cmdStr = string.Format("UPDATE Users SET Username = N'{0}' WHERE Username = N'{1}'", username, Session["login"]);
+                        SqlCommand cmdObj = new SqlCommand(cmdStr, conObj);
+                        cmdObj.ExecuteNonQuery();
+                        Session["usernameComment"] = "";
+                        Session["login"] = username;
+                    }
+                    else
+                    {
+                        Session["myLastUsername"] = Session["login"];
+                        Session["username"] = Request.Form["username"];
+                        Response.Redirect("already-used-username-update-your-account.aspx");
+                    }
+                }
             }
             conObj.Close();
             if (Session["usernamecomment"] == "")

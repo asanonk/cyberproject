@@ -37,7 +37,7 @@
                 SqlConnection conObj = new SqlConnection(conStr);
                 SqlCommand cmdObj = new SqlCommand(cmdStr, conObj);
                 conObj.Open();
-                string cmdInsertStr = string.Format("UPDATE Users SET Username = N'{0}', Name = N'{1}', Password = N'{2}', Email = N'{3}', Phone = N'{4}', Gender = N'{5}', Birthday = N'{6}', Adress = N'{7}', CurrentBestPlayer = N'{8}', FavoriteTeam = N'{9}', BestPlayerEver = N'{10}', FavoriteShoesBrand = N'{11}', AreYouPlayingBasketball = N'{12}' WHERE Username=N'{13}'", Session["username"], Session["name"], Session["password"], Session["email"], Session["phoneNumber"], Session["gender"], Session["birthday"], Session["adress"], Session["currentBestPlayer"], Session["favoriteTeam"], Session["BestPlayerEver"], Session["favoriteShoesBrand"], Session["areYouPlayingBasketball"], Session["myLastUsername"]);
+                string cmdInsertStr = string.Format("UPDATE Users SET Username = N'{0}' WHERE Username=N'{1}'", Session["username"], Session["myLastUsername"]);
                 SqlCommand cmdInsersObj = new SqlCommand(cmdInsertStr, conObj);
                 cmdInsersObj.ExecuteNonQuery();
                 conObj.Close();

@@ -77,42 +77,7 @@
                 SqlCommand cmdObj = new SqlCommand(cmdStr, conObj);
                 cmdObj.ExecuteNonQuery();
             }
-            if (username != "")
-            {
-                if (username != Request.QueryString["username"])
-                {
-                    if (CheckUsername(username) == false)
-                    {
-                        string cmdStr = string.Format("UPDATE Users SET Username = N'{0}' WHERE Username = N'{1}'", username, Request.QueryString["username"]);
-                        SqlCommand cmdObj = new SqlCommand(cmdStr, conObj);
-                        cmdObj.ExecuteNonQuery();
-                        Session["src"] = string.Format("managers-update-users.aspx?username={0}", username);
-                        Response.Redirect(Session["src"].ToString());
-                        Session["usernameComment"] = "";
-                    }
-                    else
-                    {
-                        Session["theUsernameOfTheEditUser"] = Request.QueryString["username"];
-                        Session["username"] = Request.Form["username"];
-                        Session["name"] = Request.Form["name"];
-                        Session["password"] = Request.Form["password"];
-                        Session["email"] = Request.Form["email"];
-                        Session["phoneNumber"] = Request.Form["phoneNumber"];
-                        Session["gender"] = Request.Form["gender"];
-                        Session["BDDay"] = Request.Form["BDDay"];
-                        Session["BDMonth"] = Request.Form["BDMonth"];
-                        Session["BDYear"] = Request.Form["BDYear"];
-                        Session["birthday"] = BDDay + "." + BDMonth + "." + BDYear;
-                        Session["adress"] = Request.Form["adress"];
-                        Session["currentBestPlayer"] = Request.Form["player"];
-                        Session["favoriteTeam"] = Request.Form["favoriteTeam"];
-                        Session["areYouPlayingBasketball"] = Request.Form["playing"];
-                        Session["BestPlayerEver"] = Request.Form["playerever"];
-                        Session["favoriteShoesBrand"] = Request.Form["likedShoes"];
-                        Response.Redirect("already-used-username-managers.aspx");
-                    }
-                }
-            }
+            
             if (password != "")
             {
                 string cmdStr = string.Format("UPDATE Users SET Password = N'{0}' WHERE Username = N'{1}'", password, Request.QueryString["username"]);
@@ -178,6 +143,28 @@
                 string cmdStr = string.Format("UPDATE Users SET FavoriteTeam = N'{0}' WHERE Username = N'{1}'", favoriteTeam, Request.QueryString["username"]);
                 SqlCommand cmdObj = new SqlCommand(cmdStr, conObj);
                 cmdObj.ExecuteNonQuery();
+            }
+            if (username != "")
+            {
+                if (username != Request.QueryString["username"])
+                {
+                    if (CheckUsername(username) == false)
+                    {
+                        string cmdStr = string.Format("UPDATE Users SET Username = N'{0}' WHERE Username = N'{1}'", username, Request.QueryString["username"]);
+                        SqlCommand cmdObj = new SqlCommand(cmdStr, conObj);
+                        cmdObj.ExecuteNonQuery();
+                        Session["src"] = string.Format("managers-update-users.aspx?username={0}", username);
+                        Response.Redirect(Session["src"].ToString());
+                        Session["usernameComment"] = "";
+                    }
+                    else
+                    {
+                        Session["theUsernameOfTheEditUser"] = Request.QueryString["username"];
+                        Session["username"] = Request.Form["username"];
+                        Session["name"] = Request.Form["name"];
+                        Response.Redirect("already-used-username-managers.aspx");
+                    }
+                }
             }
             conObj.Close();
             Response.Redirect(Session["src"].ToString());
