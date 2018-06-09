@@ -3,6 +3,7 @@
 <%@ Import Namespace="System.Data" %>
 
 <script runat="server">
+    string err = "";
     string ColorForTheChat()
     {
         Random r = new Random();
@@ -51,7 +52,7 @@
                 }
                 else
                 {
-                    Response.Redirect("register-name-email-phone.aspx");
+                    err = "<h3>Maybe you have a mistake?</h3><br><a href='register-name-email-phone.aspx'><button class='buttonLogin' style='vertical-align:middle'><span>Register </span></button></a>";
                 }
             }
             else
@@ -71,7 +72,7 @@
 
                 if (Session["login"] == "אורח")
                 {
-                    Response.Redirect("register-name-email-phone.aspx");
+                    err = "<h3>Maybe you have a mistake?</h3>";
                 }
             }
         }
@@ -82,6 +83,7 @@
 Login
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="body" Runat="Server">
+<%=err %>
 <form action="login.aspx" method="post">
 <h5>Username</h5>
 <input type="text" id="username" name="username"/>

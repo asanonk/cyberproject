@@ -76,7 +76,8 @@ Find Here A New One
 <h5>Username</h5>
 <input type="text" value="" id="username" name="username"/>
 <p id="usernameComment"><%=Session["usernameComment"] %></p>
-<input type="submit" value="Ok" name="submitBtn" />
+<br />
+<input type="submit" class="buttonSendLoginRegisterUpdateForm" style="background-color:#cc33ff" value="Ok" name="submitBtn" />
 </form>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="image" Runat="Server">

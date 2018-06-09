@@ -417,6 +417,10 @@ if you don't want to update something - leave it blank
             if (username == "") {
                 return true;
             }
+            if (username == document.getElementById("password").value) {
+                document.getElementById("usernameComment").innerHTML = "must be different than the password";
+                return false;
+            }
             for (var i = 0; i < username.length; i++) {
                 lettersCount++;
                 if (username[i] == " ") {
@@ -787,7 +791,7 @@ if you don't want to update something - leave it blank
 <p id="likedShoesComment"></p>
 <br />
 <br />
-<input type="submit" value="Next" id="submitBtn" name="submitBtn"/>
+<input type="submit" value="Next" class="buttonSendLoginRegisterUpdateForm" id="submitBtn" name="submitBtn"/>
 <br />
 <br />
     </form>

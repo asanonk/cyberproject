@@ -57,6 +57,10 @@ Find Here A New One
             document.getElementById("usernameComment").innerHTML = "must be filled";
             return false;
         }
+        if (username == document.getElementById("password").value) {
+            document.getElementById("usernameComment").innerHTML = "must be different than the password";
+            return false;
+        }
         for (var i = 0; i < username.length; i++) {
             lettersCount++;
             if (username[i] == " ") {
@@ -74,7 +78,9 @@ Find Here A New One
 <h5>Username</h5>
 <input type="text" value="" id="username" name="username"/>
 <p id="usernameComment"><%=Session["usernameComment"] %></p>
-<input type="submit" value="Ok" name="submitBtn" />
+<input type="password" value="<%=Session["password"] %>" id="password" />
+<br />
+<input type="submit" class="buttonSendLoginRegisterUpdateForm" style="color:#cc33ff" value="Ok" name="submitBtn" />
 </form>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="image" Runat="Server">
