@@ -39,7 +39,7 @@
                 conObj.Close();
                 Session["login"] = Session["username"];
                 Session["level"] = "משתמש רגיל";
-                Response.Redirect("update-succeeded.aspx");
+                Response.Redirect("register-thanks.aspx");
             }
         }
     }

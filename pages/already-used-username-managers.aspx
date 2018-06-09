@@ -78,7 +78,7 @@ Find Here A New One
 <h5>Username</h5>
 <input type="text" value="" id="username" name="username"/>
 <p id="usernameComment"><%=Session["usernameComment"] %></p>
-<input type="password" value="<%=Session["password"] %>" id="password" />
+<input type="password" value="<%=Session["password"] %>" id="password" hidden/>
 <br />
 <input type="submit" class="buttonSendLoginRegisterUpdateForm" style="color:#cc33ff" value="Ok" name="submitBtn" />
 </form>
