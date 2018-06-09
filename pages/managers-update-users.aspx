@@ -17,12 +17,12 @@
         }//if
         conObj.Close();
         return false;
-        Session.Abandon();
     }
     
     protected void Page_Load(object sender, EventArgs e)
     {
-        Session["usernameComment"] = "";
+        Session["src"] = string.Format("managers-update-users.aspx?username={0}", Request.QueryString["username"]);
+        Session["usernameComment"] = " ";
         if (Session["login"] == "אורח")
         {
             Response.Redirect("only-for-users-error.aspx");
@@ -79,19 +79,36 @@
             }
             if (username != "")
             {
-                if (username != Session["username"].ToString())
+                if (username != Request.QueryString["username"])
                 {
                     if (CheckUsername(username) == false)
                     {
                         string cmdStr = string.Format("UPDATE Users SET Username = N'{0}' WHERE Username = N'{1}'", username, Request.QueryString["username"]);
                         SqlCommand cmdObj = new SqlCommand(cmdStr, conObj);
                         cmdObj.ExecuteNonQuery();
+                        Session["src"] = string.Format("managers-update-users.aspx?username={0}", username);
+                        Response.Redirect(Session["src"].ToString());
                         Session["usernameComment"] = "";
-                        Session["login"] = username;
                     }
                     else
                     {
-                        Session["usernameComment"] = "someone used this username";
+                        Session["username"] = Request.Form["username"];
+                        Session["name"] = Request.Form["name"];
+                        Session["password"] = Request.Form["password"];
+                        Session["email"] = Request.Form["email"];
+                        Session["phoneNumber"] = Request.Form["phoneNumber"];
+                        Session["gender"] = Request.Form["gender"];
+                        Session["BDDay"] = Request.Form["BDDay"];
+                        Session["BDMonth"] = Request.Form["BDMonth"];
+                        Session["BDYear"] = Request.Form["BDYear"];
+                        Session["birthday"] = BDDay + "." + BDMonth + "." + BDYear;
+                        Session["adress"] = Request.Form["adress"];
+                        Session["currentBestPlayer"] = Request.Form["player"];
+                        Session["favoriteTeam"] = Request.Form["favoriteTeam"];
+                        Session["areYouPlayingBasketball"] = Request.Form["playing"];
+                        Session["BestPlayerEver"] = Request.Form["playerever"];
+                        Session["favoriteShoesBrand"] = Request.Form["likedShoes"];
+                        Response.Redirect("already-used-username.aspx");
                     }
                 }
             }
@@ -161,10 +178,8 @@
                 SqlCommand cmdObj = new SqlCommand(cmdStr, conObj);
                 cmdObj.ExecuteNonQuery();
             }
-            conObj.Close(); if (Session["usernamecomment"] == "")
-            {
-                Response.Redirect("update-your-account.aspx");
-            }
+            conObj.Close();
+            Response.Redirect(Session["src"].ToString());
         }
     }
 </script>
@@ -312,32 +327,74 @@ if you don't want to update something - leave it blank
             }
         }
 
+        var emailValidChars = "@.abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+        function checkMatchChars(validChars, value) {
+            var currentChar;
+            var valid = false;
+            // value.length - checking each letter
+            for (var i = 0; i < value.length; i++) {
+                currentChar = value.charAt(i);
+                // checking each valid char to the current letter
+                for (var j = 0; j < validChars.length; j++) {
+                    if (currentChar == validChars.charAt(j)) {
+                        valid = true;
+                    }
+                }
+                if (!valid) {
+                    return false
+                }
+            }
+            return true;
+        }
 
         function CheckEmail() {
-            var email = String(document.getElementById("email").value);
+            var email = document.getElementById("email").value;
+            var atPosition = email.indexOf('@');
+            var lastDot = email.lastIndexOf('.');
+            var beforeAt = email.split('@', 1);
+            var valid = checkMatchChars(emailValidChars, email);
             if (email == "") {
                 return true;
             }
-            var at = false;
-            var dot = false;
-            for (var i = 0; i < email.length - 1; i++) {
-                if (at == true && email[i] == '.') {
-                    dot = true;
+            if (email != "") {
+                if (valid) {
+                    if (atPosition == -1) {
+                        document.getElementById("emailComment").innerHTML = "you don't have a @";
+                        return false;
+                    }
+                    if (atPosition == 0) {
+                        document.getElementById("emailComment").innerHTML = "you must have at least one char before the @";
+                        return false;
+                    }
+                    if (email.lastIndexOf('@') != atPosition) {
+                        document.getElementById("emailComment").innerHTML = "you have more than one @";
+                        return false;
+                    }
+                    if (lastDot < atPosition) {
+                        document.getElementById("emailComment").innerHTML = "email must conclude a dot after the @";
+                        return false;
+                    }
+                    if (lastDot + 2 >= email.length) {
+                        document.getElementById("emailComment").innerHTML = "email must conclude at least two chars after the dot";
+                        return false;
+                    }
+                    if (lastDot < atPosition + 2) {
+                        document.getElementById("emailComment").innerHTML = "email must conclude text between the @ the the dot";
+                        return false;
+                    }
+                    document.getElementById("emailComment").innerHTML = "";
+                    return true;
                 }
-                else if (email[i] == '@' && email[i + 1] != '.') {
-                    at = true;
+                else {
+                    document.getElementById("emailComment").innerHTML = "onlt number, english letters and dots are valid";
+                    return false;
                 }
-            }
-            if (at == true && dot == true) {
-                document.getElementById("emailComment").innerHTML = "";
-                return true;
             }
             else {
-                document.getElementById("emailComment").innerHTML = "unlimited email";
+                document.getElementById("emailComment").innerHTML = "must be filled";
                 return false;
             }
         }
-
 
         function CheckConfirmPassword() {
             var password = document.getElementById("password").value
@@ -425,11 +482,12 @@ if you don't want to update something - leave it blank
 
         function CheckAdress() {
             var lettersCount = 0;
-            var spacesCount = 0;
-            var letters = "אבגדהוזחטיכלמנסעפצקרשתןםךףץ ";
+            var spacesOrNumbersCount = 0;
+            var letters = "אבגדהוזחטיכלמנסעפצקרשתןםךףץ0123456789 ";
             var adress = String(document.getElementById("adress").value);
             if (adress == "") {
-                return true;
+                document.getElementById("adressComment").innerHTML = "must be filled";
+                return false;
             }
             for (var i = 0; i < adress.length; i++) {
                 var found = false;
@@ -437,8 +495,8 @@ if you don't want to update something - leave it blank
                     if (adress[i] == letters[k]) {
                         found = true;
                         lettersCount++;
-                        if (adress[i] == " ") {
-                            spacesCount++;
+                        if (adress[i] == " " || (parseInt(adress[i]) >= 0 && parseInt(adress[i]) <= 9)) {
+                            spacesOrNumbersCount++;
                         }
                     }
                 }
@@ -446,7 +504,7 @@ if you don't want to update something - leave it blank
                     document.getElementById("adressComment").innerHTML = "must be written in hebrew";
                     return false;
                 }
-                if (spacesCount == lettersCount) {
+                if (spacesOrNumbersCount == lettersCount) {
                     document.getElementById("adressComment").innerHTML = "must be written in hebrew";
                     return false;
                 }
@@ -456,7 +514,7 @@ if you don't want to update something - leave it blank
             return true;
         }
 </script>
-<form action="update-your-account.aspx" method="post" onsubmit="return Check()">
+<form action="<%=Session["src"] %>" method="post" onsubmit="return Check()">
 <h5>Full Name</h5>
 <input type="text" value="<%=Session["name"] %>" id="name" name="name"/>
 <p id="nameComment"></p>

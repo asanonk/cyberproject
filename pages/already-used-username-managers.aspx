@@ -37,8 +37,6 @@
                 SqlCommand cmdInsersObj = new SqlCommand(cmdInsertStr, conObj);
                 cmdInsersObj.ExecuteNonQuery();
                 conObj.Close();
-                Session["login"] = Session["username"];
-                Session["level"] = "משתמש רגיל";
                 Response.Redirect("update-succeeded.aspx");
             }
         }

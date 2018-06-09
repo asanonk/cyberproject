@@ -448,8 +448,8 @@ Register
 
         function CheckAdress() {
             var lettersCount = 0;
-            var spacesCount = 0;
-            var letters = "אבגדהוזחטיכלמנסעפצקרשתןםךףץ ";
+            var spacesOrNumbersCount = 0;
+            var letters = "אבגדהוזחטיכלמנסעפצקרשתןםךףץ0123456789 ";
             var adress = String(document.getElementById("adress").value);
             if (adress == "") {
                 document.getElementById("adressComment").innerHTML = "must be filled";
@@ -461,8 +461,8 @@ Register
                     if (adress[i] == letters[k]) {
                         found = true;
                         lettersCount++;
-                        if (adress[i] == " ") {
-                            spacesCount++;
+                        if (adress[i] == " " || (parseInt(adress[i]) >= 0 && parseInt(adress[i]) <= 9)) {
+                            spacesOrNumbersCount++;
                         }
                     }
                 }
@@ -470,7 +470,7 @@ Register
                     document.getElementById("adressComment").innerHTML = "must be written in hebrew";
                     return false;
                 }
-                if (spacesCount == lettersCount) {
+                if (spacesOrNumbersCount == lettersCount) {
                     document.getElementById("adressComment").innerHTML = "must be written in hebrew";
                     return false;
                 }

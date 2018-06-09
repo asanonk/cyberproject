@@ -15,7 +15,6 @@
     string showBestPlayerEver;
     string showFavoriteShoes;
     string showFavoriteTeam;
-    string showUsernameComment;
     bool CheckUsername(string username)
     {
         string conStr = @"Data Source=.\SQLEXPRESS;AttachDbFilename=|DataDirectory|\Database.mdf;Integrated Security=True;User Instance=True";
@@ -103,12 +102,28 @@
                         string cmdStr = string.Format("UPDATE Users SET Username = N'{0}' WHERE Username = N'{1}'", username, Session["login"]);
                         SqlCommand cmdObj = new SqlCommand(cmdStr, conObj);
                         cmdObj.ExecuteNonQuery();
-                        showUsernameComment = "";
+                        Session["usernameComment"] = "";
                         Session["login"] = username;
                     }
                     else
                     {
-                        showUsernameComment = "someone used this username";
+                        Session["username"] = Request.Form["username"];
+                        Session["name"] = Request.Form["name"];
+                        Session["password"] = Request.Form["password"];
+                        Session["email"] = Request.Form["email"];
+                        Session["phoneNumber"] = Request.Form["phoneNumber"];
+                        Session["gender"] = Request.Form["gender"];
+                        Session["BDDay"] = Request.Form["BDDay"];
+                        Session["BDMonth"] = Request.Form["BDMonth"];
+                        Session["BDYear"] = Request.Form["BDYear"];
+                        Session["birthday"] = BDDay + "." + BDMonth + "." + BDYear;
+                        Session["adress"] = Request.Form["adress"];
+                        Session["currentBestPlayer"] = Request.Form["player"];
+                        Session["favoriteTeam"] = Request.Form["favoriteTeam"];
+                        Session["areYouPlayingBasketball"] = Request.Form["playing"];
+                        Session["BestPlayerEver"] = Request.Form["playerever"];
+                        Session["favoriteShoesBrand"] = Request.Form["likedShoes"];
+                        Response.Redirect("already-used-username.aspx");
                     }
                 }
             }
@@ -484,11 +499,12 @@ if you don't want to update something - leave it blank
 
         function CheckAdress() {
             var lettersCount = 0;
-            var spacesCount = 0;
-            var letters = "אבגדהוזחטיכלמנסעפצקרשתןםךףץ ";
+            var spacesOrNumbersCount = 0;
+            var letters = "אבגדהוזחטיכלמנסעפצקרשתןםךףץ0123456789 ";
             var adress = String(document.getElementById("adress").value);
             if (adress == "") {
-                return true;
+                document.getElementById("adressComment").innerHTML = "must be filled";
+                return false;
             }
             for (var i = 0; i < adress.length; i++) {
                 var found = false;
@@ -496,8 +512,8 @@ if you don't want to update something - leave it blank
                     if (adress[i] == letters[k]) {
                         found = true;
                         lettersCount++;
-                        if (adress[i] == " ") {
-                            spacesCount++;
+                        if (adress[i] == " " || (parseInt(adress[i]) >= 0 && parseInt(adress[i]) <= 9)) {
+                            spacesOrNumbersCount++;
                         }
                     }
                 }
@@ -505,7 +521,7 @@ if you don't want to update something - leave it blank
                     document.getElementById("adressComment").innerHTML = "must be written in hebrew";
                     return false;
                 }
-                if (spacesCount == lettersCount) {
+                if (spacesOrNumbersCount == lettersCount) {
                     document.getElementById("adressComment").innerHTML = "must be written in hebrew";
                     return false;
                 }
@@ -524,7 +540,7 @@ if you don't want to update something - leave it blank
 <h5>Username</h5>
 <input type="text" value="<%=showUsername %>" id="username" name="username"/>
 <p id="usernameComment"></p>
-<p id="sessionCheckP"><%=showUsernameComment%></p>
+<p id="sessionCheckP"><%=Session["usernameComment"]%></p>
 <br />
 <br />
 <h5>Password</h5>
