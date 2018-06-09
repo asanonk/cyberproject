@@ -2,6 +2,20 @@
 <%@ Import Namespace = "System.Data.SqlClient" %>
 
 <script runat="server">
+    string showUsername;
+    string showName;
+    string showPhone;
+    string showPassword;
+    string showEmail;
+    string showAdress;
+    string showGender;
+    string showBirthday;
+    string showCurrentBestPlayer;
+    string showAreYouPlayingBasketball;
+    string showBestPlayerEver;
+    string showFavoriteShoes;
+    string showFavoriteTeam;
+    string showUsernameComment;
     bool CheckUsername(string username)
     {
         string conStr = @"Data Source=.\SQLEXPRESS;AttachDbFilename=|DataDirectory|\Database.mdf;Integrated Security=True;User Instance=True";
@@ -39,19 +53,19 @@
         SqlDataReader reader = theCmdObj.ExecuteReader();
         if (reader.Read())
         {
-            Session["username"] = reader["Username"];
-            Session["name"] = reader["Name"];
-            Session["phone"] = reader["Phone"];
-            Session["password"] = reader["Password"];
-            Session["email"] = reader["Email"];
-            Session["adress"] = reader["Adress"];
-            Session["gender"] = reader["Gender"];
-            Session["birthday"] = reader["Birthday"];
-            Session["currentBestPlayer"] = reader["CurrentBestPlayer"];
-            Session["areYouPlayingBasketball"] = reader["AreYouPlayingBasketball"];
-            Session["bestPlayerEver"] = reader["BestPlayerEver"];
-            Session["favoriteShoes"] = reader["FavoriteShoesBrand"];
-            Session["favoriteTeam"] = reader["FavoriteTeam"];
+            showUsername = reader["Username"].ToString();
+            showName = reader["Name"].ToString();
+            showPhone = reader["Phone"].ToString();
+            showPassword = reader["Password"].ToString();
+            showEmail = reader["Email"].ToString();
+            showAdress = reader["Adress"].ToString();
+            showGender = reader["Gender"].ToString();
+            showBirthday = reader["Birthday"].ToString();
+            showCurrentBestPlayer = reader["CurrentBestPlayer"].ToString();
+            showAreYouPlayingBasketball = reader["AreYouPlayingBasketball"].ToString();
+            showBestPlayerEver = reader["BestPlayerEver"].ToString();
+            showFavoriteShoes = reader["FavoriteShoesBrand"].ToString();
+            showFavoriteTeam = reader["FavoriteTeam"].ToString();
         }
         theConObj.Close();
         if (Request.Form["submitBtn"] != null)
@@ -89,12 +103,12 @@
                         string cmdStr = string.Format("UPDATE Users SET Username = N'{0}' WHERE Username = N'{1}'", username, Session["login"]);
                         SqlCommand cmdObj = new SqlCommand(cmdStr, conObj);
                         cmdObj.ExecuteNonQuery();
-                        Session["usernameComment"] = "";
+                        showUsernameComment = "";
                         Session["login"] = username;
                     }
                     else
                     {
-                        Session["usernameComment"] = "someone used this username";
+                        showUsernameComment = "someone used this username";
                     }
                 }
             }
@@ -503,37 +517,37 @@ if you don't want to update something - leave it blank
 </script>
 <form action="update-your-account.aspx" method="post" onsubmit="return Check()">
 <h5>Full Name</h5>
-<input type="text" value="<%=Session["name"] %>" id="name" name="name"/>
+<input type="text" value="<%=showName %>" id="name" name="name"/>
 <p id="nameComment"></p>
 <br />
 <br />
 <h5>Username</h5>
-<input type="text" value="<%=Session["username"] %>" id="username" name="username"/>
+<input type="text" value="<%=showUsername %>" id="username" name="username"/>
 <p id="usernameComment"></p>
-<p id="sessionCheckP"><%=Session["usernameComment"]%></p>
+<p id="sessionCheckP"><%=showUsernameComment%></p>
 <br />
 <br />
 <h5>Password</h5>
-<input type="password" value="<%=Session["password"] %>" id="password" name="password" />
+<input type="password" value="<%=showPassword %>" id="password" name="password" />
 <p id="passwordComment"></p>
 <br />
 <br />
 <h5>Confirm Password</h5>
-<input type="password" value="<%=Session["password"] %>" id="confirmPassword" name="confirmPassword" />
+<input type="password" value="<%=showPassword %>" id="confirmPassword" name="confirmPassword" />
 <p id="confirmPasswordComment"></p>
 <br />
 <br />
 <h5>Email</h5>
-<input type="text" value="<%=Session["email"] %>" id="email" name="email" />
+<input type="text" value="<%=showEmail %>" id="email" name="email" />
 <p id="emailComment"></p>
 <br />
 <h5>Phone Number</h5>
-<input type="text" value="<%=Session["phone"] %>" id="phoneNumber" name = "phoneNumber" />
+<input type="text" value="<%=showPhone %>" id="phoneNumber" name = "phoneNumber" />
 <p id="phoneNumberComment"></p>
 <br />
 <br />
 <h5>Gender</h5>
-<span style="font-size: medium">Your Current is: <%=Session["gender"] %></span>
+<span style="font-size: medium">Your Current is: <%=showGender%></span>
 <br />
 <input type="radio" name="gender" value="male"/>Male
 <br />
@@ -543,7 +557,7 @@ if you don't want to update something - leave it blank
 <br />
 <br />
 <h5>Birth-Day</h5>
-<span style="font-size: medium">Your Current is: <%=Session["birthday"] %></span>
+<span style="font-size: medium">Your Current is: <%=showBirthday%></span>
 <br />
 <select id="BDDay" name="BDDay">
 <option>Day</option>
@@ -670,7 +684,7 @@ if you don't want to update something - leave it blank
 <br />
 <br />
 <h5>Adress</h5>
-<input type="text" value="<%=Session["adress"] %>" id="adress" name="adress"/>
+<input type="text" value="<%=showAdress %>" id="adress" name="adress"/>
 <p id="adressComment"></p>
 <br />
 <br />
@@ -678,7 +692,7 @@ if you don't want to update something - leave it blank
 <br />
 <br />
 <h2>Who Is The Current Best Player?</h2>
-<span style="font-size: medium">Your Current is: <%=Session["currentBestPlayer"] %></span>
+<span style="font-size: medium">Your Current is: <%=showCurrentBestPlayer%></span>
 <br />
 <input type="radio" name="player" value="Kevin Durant" />Kevin Durant
 <br />
@@ -697,7 +711,7 @@ if you don't want to update something - leave it blank
 <br />
 <br />
 <h2>What Is Your Favorite Team?</h2>
-<span style="font-size: medium">Your Current is: <%=Session["favoriteTeam"] %></span>
+<span style="font-size: medium">Your Current is: <%=showFavoriteTeam%></span>
 <br />
 <select id="favoriteTeam" name ="favoriteTeam">
 <option>Select</option>
@@ -737,7 +751,7 @@ if you don't want to update something - leave it blank
 <br />
 <h2>Questions</h2>
 <h2>Are You Playing Basketball?</h2>
-<span style="font-size: medium">Your Current is: <%=Session["areYouPlayingBasketball"]%></span>
+<span style="font-size: medium">Your Current is: <%=showAreYouPlayingBasketball%></span>
 <br />
 <input type="radio" name="playing" value="yes" />Yes
 <br />
@@ -747,7 +761,7 @@ if you don't want to update something - leave it blank
 <br />
 <br />
 <h2>Who Is Best Player Ever?</h2>
-<span style="font-size: medium">Your Current is: <%=Session["bestPlayerEver"]%></span>
+<span style="font-size: medium">Your Current is: <%=showBestPlayerEver%></span>
 <br />
 <input type="radio" name="playerever" value="jordan" />Michael Jordan
 <br />
@@ -763,7 +777,7 @@ if you don't want to update something - leave it blank
 <br />
 <br />
 <h2>Shoes Brands That You Like</h2>
-<span style="font-size: medium">Your Current is: <%=Session["favoriteShoes"]%></span>
+<span style="font-size: medium">Your Current is: <%=showFavoriteShoes%></span>
 <br />
 <input type="checkbox" name="likedShoes" value="Air Jordan" />Air Jordan<br /><br />
 <input type="checkbox" name="likedShoes" value="KD" />KD<br /><br />

@@ -13,7 +13,7 @@
         }
         else if (number == 2)
         {
-            return "Yellow";
+            return "Purple";
         }
         else if (number == 3)
         {
