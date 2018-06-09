@@ -92,6 +92,7 @@
                     }
                     else
                     {
+                        Session["theUsernameOfTheEditUser"] = Request.QueryString["username"];
                         Session["username"] = Request.Form["username"];
                         Session["name"] = Request.Form["name"];
                         Session["password"] = Request.Form["password"];
@@ -108,7 +109,7 @@
                         Session["areYouPlayingBasketball"] = Request.Form["playing"];
                         Session["BestPlayerEver"] = Request.Form["playerever"];
                         Session["favoriteShoesBrand"] = Request.Form["likedShoes"];
-                        Response.Redirect("already-used-username.aspx");
+                        Response.Redirect("already-used-username-managers.aspx");
                     }
                 }
             }

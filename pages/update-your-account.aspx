@@ -30,7 +30,6 @@
         }//if
         conObj.Close();
         return false;
-        Session.Abandon();
     }
     
     protected void Page_Load(object sender, EventArgs e)
@@ -95,9 +94,9 @@
             }
             if (username != "")
             {
-                if (username != Session["username"].ToString())
+                if (username != Session["login"].ToString())
                 {
-                    if (CheckUsername(username) == false && username.Length >= 3)
+                    if (CheckUsername(username) == false)
                     {
                         string cmdStr = string.Format("UPDATE Users SET Username = N'{0}' WHERE Username = N'{1}'", username, Session["login"]);
                         SqlCommand cmdObj = new SqlCommand(cmdStr, conObj);
@@ -107,6 +106,7 @@
                     }
                     else
                     {
+                        Session["myLastUsername"] = Session["login"];
                         Session["username"] = Request.Form["username"];
                         Session["name"] = Request.Form["name"];
                         Session["password"] = Request.Form["password"];
@@ -123,7 +123,7 @@
                         Session["areYouPlayingBasketball"] = Request.Form["playing"];
                         Session["BestPlayerEver"] = Request.Form["playerever"];
                         Session["favoriteShoesBrand"] = Request.Form["likedShoes"];
-                        Response.Redirect("already-used-username.aspx");
+                        Response.Redirect("already-used-username-update-your-account.aspx");
                     }
                 }
             }
@@ -193,7 +193,8 @@
                 SqlCommand cmdObj = new SqlCommand(cmdStr, conObj);
                 cmdObj.ExecuteNonQuery();
             }
-            conObj.Close(); if (Session["usernamecomment"] == "")
+            conObj.Close();
+            if (Session["usernamecomment"] == "")
             {
                 Response.Redirect("update-your-account.aspx");
             }
@@ -442,6 +443,10 @@ if you don't want to update something - leave it blank
             }
             if (spacesCount == lettersCount) {
                 document.getElementById("usernameComment").innerHTML = "must be filled";
+                return false;
+            }
+            if (username.length < 3) {
+                document.getElementById("usernameComment").innerHTML = "write your full username";
                 return false;
             }
             return true;

@@ -25,6 +25,10 @@
     {
         if (Request.Form["submitBtn"] != null)
         {
+            if (Request.Form["username"] == Session["theUsernameOfTheEditUser"].ToString())
+            {
+                Response.Redirect("update-succeeded.aspx");
+            }
             if (CheckUsername() == false)
             {
                 Session["username"] = Request.Form["username"];
@@ -33,7 +37,7 @@
                 SqlConnection conObj = new SqlConnection(conStr);
                 SqlCommand cmdObj = new SqlCommand(cmdStr, conObj);
                 conObj.Open();
-                string cmdInsertStr = string.Format("INSERT INTO Users (Username, Name, Password, Email, Phone, Gender, Birthday, Adress, CurrentBestPlayer, FavoriteTeam, BestPlayerEver, FavoriteShoesBrand, AreYouPlayingBasketball) VALUES (N'{0}', N'{1}', N'{2}', N'{3}', N'{4}', N'{5}', N'{6}', N'{7}', N'{8}', N'{9}', N'{10}', N'{11}', N'{12}')", Session["username"], Session["name"], Session["password"], Session["email"], Session["phoneNumber"], Session["gender"], Session["birthday"], Session["adress"], Session["currentBestPlayer"], Session["favoriteTeam"], Session["BestPlayerEver"], Session["favoriteShoesBrand"], Session["areYouPlayingBasketball"]);
+                string cmdInsertStr = string.Format("UPDATE Users SET Username = N'{0}', Name = N'{1}', Password = N'{2}', Email = N'{3}', Phone = N'{4}', Gender = N'{5}', Birthday = N'{6}', Adress = N'{7}', CurrentBestPlayer = N'{8}', FavoriteTeam = N'{9}', BestPlayerEver = N'{10}', FavoriteShoesBrand = N'{11}', AreYouPlayingBasketball = N'{12}' WHERE Username=N'{13}'", Session["username"], Session["name"], Session["password"], Session["email"], Session["phoneNumber"], Session["gender"], Session["birthday"], Session["adress"], Session["currentBestPlayer"], Session["favoriteTeam"], Session["BestPlayerEver"], Session["favoriteShoesBrand"], Session["areYouPlayingBasketball"], Session["username"]);
                 SqlCommand cmdInsersObj = new SqlCommand(cmdInsertStr, conObj);
                 cmdInsersObj.ExecuteNonQuery();
                 conObj.Close();
@@ -71,10 +75,14 @@ Find Here A New One
             document.getElementById("usernameComment").innerHTML = "must be filled";
             return false;
         }
+        if (username.length < 3) {
+            document.getElementById("usernameComment").innerHTML = "write your full username";
+            return false;
+        }
         return true;
     }
 </script>
-<form action="already-used-username.aspx" method="post" onsubmit="return CheckUsername()">
+<form action="already-used-username-managers.aspx" method="post" onsubmit="return CheckUsername()">
 <h5>Username</h5>
 <input type="text" value="" id="username" name="username"/>
 <p id="usernameComment"><%=Session["usernameComment"] %></p>

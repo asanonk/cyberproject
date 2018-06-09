@@ -27,7 +27,8 @@ Benjamin David Simmons (born 20 July 1996) is an
 Australian professional basketball player for the
 Philadelphia 76ers of the National Basketball
 Association (NBA). A versatile forward, he played
-college basketball for one season with the Louisiana
+college basketball for one season with the
+Louisiana
 State University (LSU) Tigers, when he was named a
 consensus first-team All-American and the USBWA
 National Freshman of the Year. He was selected
