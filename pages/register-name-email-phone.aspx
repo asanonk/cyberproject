@@ -353,6 +353,7 @@ Register
                 return false;
 
             }
+            document.getElementById("usernameComment").innerHTML = "";
             return true;
         }
 

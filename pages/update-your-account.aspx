@@ -229,6 +229,10 @@ if you don't want to update something - leave it blank
             if (name == "") {
                 return true;
             }
+            if (name.length < 3) {
+                document.getElementById("nameComment").innerHTML = "enter your full name";
+                return false;
+            }
             for (var i = 0; i < name.length; i++) {
                 var found = false;
                 for (var k = 0; k < letters.length; k++) {
@@ -443,6 +447,7 @@ if you don't want to update something - leave it blank
                 document.getElementById("usernameComment").innerHTML = "write your full username";
                 return false;
             }
+            document.getElementById("usernameComment").innerHTML = "";
             return true;
         }
 

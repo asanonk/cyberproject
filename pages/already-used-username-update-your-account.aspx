@@ -78,6 +78,7 @@ Find Here A New One
             document.getElementById("usernameComment").innerHTML = "must be filled";
             return false;
         }
+        document.getElementById("usernameComment").innerHTML = "";
         return true;
     }
 </script>

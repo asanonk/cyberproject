@@ -21,7 +21,7 @@ Shop
 <td>
 <center>
 <img src="https://images.footballfanatics.com/FFImage/thumb.aspx?i=/productimages/_1768000/ff_1768829_xl.jpg&w=600" width="125px" height="125px" alt=""/>
-<h2>99.99$</h2>
+<h2>84.99$</h2>
 <a href="http://store.nba.com/Golden_State_Warriors_Jerseys/Mens_Golden_State_Warriors_Stephen_Curry_Fanatics_Branded_Royal_2018_NBA_Champions_Fast_Break_Replica_Player_Jersey_%E2%80%93_Icon_Edition" target="_blank"><img src="https://images-eu.ssl-images-amazon.com/images/I/41OCsvo6rtL.png" alt="" width="15%"/></a>
 </center>
 </td>

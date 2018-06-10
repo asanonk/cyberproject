@@ -69,10 +69,7 @@ Find Here A New One
             document.getElementById("usernameComment").innerHTML = "must be filled";
             return false;
         }
-        if (username.length < 3) {
-            document.getElementById("usernameComment").innerHTML = "write your full username";
-            return false;
-        }
+        document.getElementById("usernameComment").innerHTML = "";
         return true;
     }
 </script>
